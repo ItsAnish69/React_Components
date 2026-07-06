@@ -1,0 +1,6 @@
+/* tailwind css import */
+@import "tailwindcss";
+
+*{
+  box-sizing: border-box;
+}
