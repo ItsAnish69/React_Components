@@ -12,21 +12,25 @@ import React from "react";
 import Header from "./Header";
 import ProductCard from "./Product";
 import { useDispatch } from "react-redux";
-import Slice, { resetItem } from "./Redux/Slice"
+import Slice, { resetItem } from "./Redux/Slice";
+import {
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
+import CartList from './CartList'
 
 export default function App() {
   const dispatch = useDispatch();
   return (
     <>
-      <Header />
-      <div className="flex flex-col gap-5 m-5">
-        <h1 className="text-5xl font-bold">redux toolkit tutorial</h1>
-        <button className="mt-5 w-35 bg-blue-600 text-white py-2 rounded-lg hover:bg-black transition"
-        onClick={() => dispatch(resetItem())}>
-          Clear Cart
-        </button>
-      </div>
-      <ProductCard />
+      <BrowserRouter>
+            <Header />  
+        <Routes>
+          <Route path='/' element={<ProductCard />}></Route>
+          <Route path='/cart-list' element={<CartList />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
