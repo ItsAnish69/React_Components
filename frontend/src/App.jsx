@@ -7,19 +7,30 @@ import React from "react";
 //   return <MainLayout />;
 // }
 
-
-
 // for redux toolkit practice
 
-import Header from "./Header"
+import Header from "./Header";
 import ProductCard from "./Product";
+import { useDispatch } from "react-redux";
+import Slice, { resetItem } from "./Redux/Slice";
+import {
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
+import CartList from './CartList'
 
-export default function App(){
+export default function App() {
+  const dispatch = useDispatch();
   return (
     <>
-    <Header />
-    <h1 className="text-5xl font-bold m-8">redux toolkit tutorial</h1>
-    <ProductCard />
+      <BrowserRouter>
+            <Header />  
+        <Routes>
+          <Route path='/' element={<ProductCard />}></Route>
+          <Route path='/cart-list' element={<CartList />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
