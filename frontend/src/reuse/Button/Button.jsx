@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Variants = {
-  primary: "bg-rose-500 text-white hover:bg-rose-600 focus:ring-rose-500",
-  secondary: "bg-gray-100 text-gray-700 hover:bg-gray-200 focus:ring-gray-400",
+  primary: "bg-blue-600 text-white hover:bg-blue-700 focus:ring-rose-500",
+  secondary: "bg-rose-600 text-white hover:bg-rose-700 focus:ring-gray-400",
 };
 
 const Sizes = {
